@@ -52,7 +52,7 @@ def prepare_radar_chart(input_data, df, numeric_columns):
         plotly.graph_objects.Figure: Radar chart figure.
     """
     categories = numeric_columns
-    user_values = [input_data[col] if col in input_data else 0 for col in categories]
+    user_values = [input_data[col] if col in input_data else "not a valid input" for col in categories]
     max_values = [df[col].max() for col in categories]
     min_values = [df[col].min() for col in categories]
 
